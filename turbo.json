@@ -1,0 +1,25 @@
+// Turbo pipeline configuration — orchestrates tasks across the monorepo.
+// Each app/package can override these defaults in its own package.json.
+{
+  "$schema": "https://turbo.build/schema.json",
+  // Files that, when changed, invalidate caches for all tasks
+  "globalDependencies": ["**/.env.*local"],
+  "tasks": {
+    // Build: depends on upstream packages building first
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", ".next/**"]
+    },
+    // Dev: long-running dev servers, no caching
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    // Lint: no deps, cacheable
+    "lint": {},
+    // Clean: just runs, never cached
+    "clean": {
+      "cache": false
+    }
+  }
+}

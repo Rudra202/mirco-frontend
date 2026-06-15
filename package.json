@@ -1,0 +1,49 @@
+{
+  "name": "frontend-platform",
+  "private": true,
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean",
+    "dev:shell": "pnpm --filter @platform/shell dev",
+    "dev:dashboard": "pnpm --filter @platform/dashboard dev",
+    "dev:workflow": "pnpm --filter @platform/workflow dev",
+    "dev:reports": "pnpm --filter @platform/reports dev",
+    "dev:settings": "pnpm --filter @platform/settings dev",
+    "build:packages": "pnpm --filter \"./packages/**\" build"
+  },
+  "dependencies": {
+    "axios": "^1.7.0",
+    "framer-motion": "^12.40.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "react-router-dom": "^7.0.0",
+    "recharts": "^3.8.1",
+    "zustand": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.2",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.20",
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.3",
+    "mini-css-extract-plugin": "^2.9.2",
+    "postcss": "^8.4.49",
+    "postcss-loader": "^8.1.1",
+    "style-loader": "^4.0.0",
+    "tailwindcss": "^3.4.17",
+    "ts-loader": "^9.5.2",
+    "ts-node": "^10.9.2",
+    "turbo": "^2.3.3",
+    "typescript": "^5.7.3",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0"
+  },
+  "packageManager": "pnpm@11.5.2",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

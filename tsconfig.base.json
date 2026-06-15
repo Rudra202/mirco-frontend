@@ -1,0 +1,32 @@
+// Base TypeScript configuration shared by all apps and packages in the monorepo.
+// Each workspace's tsconfig.json extends this file.
+{
+  "compilerOptions": {
+    "target": "ES2020",                      // Modern JS output
+    "module": "ESNext",                      // ESM module output
+    "moduleResolution": "bundler",           // Resolve modules the way bundlers do
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "jsx": "react-jsx",                      // React 18 JSX transform
+    "strict": true,                          // Enable all strict type-checking options
+    "esModuleInterop": true,                 // Interop CommonJS <-> ESM
+    "skipLibCheck": true,                    // Skip type-checking .d.ts files (faster)
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,               // Allow importing .json files
+    "declaration": true,                     // Emit .d.ts files
+    "declarationMap": true,                  // Sourcemaps for declarations
+    "sourceMap": true,                       // Emit .js.map sourcemaps
+    "outDir": "dist",
+    "baseUrl": ".",
+
+    // Path aliases — maps @platform/* to local packages
+    "paths": {
+      "@platform/types": ["packages/types/src"],
+      "@platform/utils": ["packages/utils/src"],
+      "@platform/hooks": ["packages/hooks/src"],
+      "@platform/store": ["packages/store/src"],
+      "@platform/api":   ["packages/api/src"],
+      "@platform/ui":    ["packages/ui/src"]
+    }
+  },
+  "exclude": ["node_modules", "dist"]
+}

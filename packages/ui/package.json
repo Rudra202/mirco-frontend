@@ -1,0 +1,17 @@
+{
+  "name": "@platform/ui",
+  "private": true,
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "dependencies": {
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "recharts": "^3.8.1",
+    "framer-motion": "^12.40.0",
+    "@platform/utils": "workspace:*"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

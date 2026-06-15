@@ -1,0 +1,69 @@
+/**
+ * @file Global styles for the Shell application.
+ * Imports Tailwind CSS directives and applies a custom Inter font.
+ * Also defines a minimal, dark-themed custom scrollbar for WebKit
+ * browsers to match the app's UI design.
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Light/Dark CSS custom properties for the entire gray palette.
+   :root = light mode, .dark overrides with dark mode values.
+   The Tailwind config maps each gray-{50..950} to var(--color-gray-*),
+   so switching the class on <html> instantly flips the theme. */
+@layer base {
+  :root {
+    /* Light mode: utility-950 yields lightest bg, utility-100 yields darkest text */
+    --color-gray-50:  3 7 18;
+    --color-gray-100: 17 24 39;
+    --color-gray-200: 31 41 55;
+    --color-gray-300: 55 65 81;
+    --color-gray-400: 75 85 99;
+    --color-gray-500: 107 114 128;
+    --color-gray-600: 156 163 175;
+    --color-gray-700: 209 213 219;
+    --color-gray-800: 229 231 235;
+    --color-gray-900: 243 244 246;
+    --color-gray-950: 249 250 251;
+  }
+
+  .dark {
+    /* Dark mode: inverted palette — utility-950 is darkest bg, utility-100 is lightest text */
+    --color-gray-50:  249 250 251;
+    --color-gray-100: 243 244 246;
+    --color-gray-200: 229 231 235;
+    --color-gray-300: 209 213 219;
+    --color-gray-400: 156 163 175;
+    --color-gray-500: 107 114 128;
+    --color-gray-600: 75 85 99;
+    --color-gray-700: 55 65 81;
+    --color-gray-800: 31 41 55;
+    --color-gray-900: 17 24 39;
+    --color-gray-950: 10 10 15;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--color-gray-950);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gray-800);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gray-700);
+}

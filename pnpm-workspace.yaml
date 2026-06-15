@@ -1,0 +1,6 @@
+# pnpm workspace definition — declares the monorepo packages.
+# All directories under apps/ and packages/ are treated as workspace packages.
+
+packages:
+  - "apps/*"
+  - "packages/*"

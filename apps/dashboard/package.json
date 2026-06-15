@@ -1,0 +1,27 @@
+{
+  "name": "@platform/dashboard",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "webpack serve --mode development --port 3001",
+    "build": "webpack --mode production",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "recharts": "^3.8.1",
+    "zustand": "^5.0.0",
+    "axios": "^1.7.0",
+    "@platform/types": "workspace:*",
+    "@platform/utils": "workspace:*",
+    "@platform/hooks": "workspace:*",
+    "@platform/store": "workspace:*",
+    "@platform/api": "workspace:*",
+    "@platform/ui": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0"
+  }
+}

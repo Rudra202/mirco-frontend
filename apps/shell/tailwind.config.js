@@ -1,0 +1,37 @@
+// ---------------------------------------------------------------------------
+// Shell App — Tailwind CSS Configuration
+// Scans shell source and shared UI package for class names.
+// ---------------------------------------------------------------------------
+module.exports = {
+  // Paths to scan for Tailwind class usage (tree-shaking unused styles)
+  content: [
+    './src/**/*.{ts,tsx}',
+    '../../packages/ui/src/**/*.{ts,tsx}',
+  ],
+  // Enable dark mode via a "dark" class on <html>
+  darkMode: 'class',
+  theme: {
+    extend: {
+      // Gray palette mapped to CSS custom properties so --color-gray-* values
+      // can be swapped between :root (light) and .dark (dark) themes.
+      colors: {
+        gray: {
+          50: 'rgb(var(--color-gray-50) / <alpha-value>)',
+          100: 'rgb(var(--color-gray-100) / <alpha-value>)',
+          200: 'rgb(var(--color-gray-200) / <alpha-value>)',
+          300: 'rgb(var(--color-gray-300) / <alpha-value>)',
+          400: 'rgb(var(--color-gray-400) / <alpha-value>)',
+          500: 'rgb(var(--color-gray-500) / <alpha-value>)',
+          600: 'rgb(var(--color-gray-600) / <alpha-value>)',
+          700: 'rgb(var(--color-gray-700) / <alpha-value>)',
+          800: 'rgb(var(--color-gray-800) / <alpha-value>)',
+          900: 'rgb(var(--color-gray-900) / <alpha-value>)',
+          950: 'rgb(var(--color-gray-950) / <alpha-value>)',
+        },
+      },
+      // Primary font stack
+      fontFamily: { sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'] },
+    },
+  },
+  plugins: [],
+};
